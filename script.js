@@ -4,19 +4,26 @@ $("#currentDay").html(dateToday);
 
 function updateTimeSlotItems() {
 
-    // apply hours through Moment.js (.time-block class)
+    // apply hours through Moment.js (.time-block class) and compare with current time
     var now = moment().hour();
 
     $(".time-block").each(function () {
-
+        var timeSlot = 
 
     // less than hours means past
-        
-    // equal to 0 is present
+         if (timeSlot < now) {
 
-    // greater than hours is future
+
+       }  // equal to 0 is present
+       else if (timeSlot === now) {
+
+
+       }
+         // greater than hours is future
+        else { (timeSlot > now) 
+
+        }
     })
-
 
 }
 
