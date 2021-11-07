@@ -2,6 +2,8 @@
 
 ## User Story
 
+I used moment.js to make a workday schedule that saves information in the local storage and then keeps it on the page when refreshed.  The following was everything needed to complete this challenge:
+
 AS AN employee with a busy schedule
 I WANT to add important events to a daily planner
 SO THAT I can manage my time effectively
@@ -27,9 +29,11 @@ THEN the saved events persist
 * HTML
 * CSS
 * Javascript
+* Moment.js
 
 ## Links/Resources
 
 * <a href="https://w3schools.com" target="_blank">Online Web Tutorials</a>
 * <a href="https://google.com" target="_blank">Google</a>
 * <a href="https://api.jquery.com/" target="_blank">jquery.com</a>
+* <a href="https://momenths.com/" target="_blank">momentjs.com</a>
