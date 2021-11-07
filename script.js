@@ -4,49 +4,51 @@ $("#currentDay").append("Today is " + dateToday);
 
 // // // get current time in hours
 var currentHour = moment().hour();
-console.log("currenthour:",currentHour);
-var textarea = [$(".description").text()]
+
+// const schedule = localstorage.getItem('schedule')
+
+// localStorage.setItem('schedule')
+
+// set up save button
+$('.saveBtn').on("click", function(){
+    // get value of description
+    var text = $(this).siblings(".description").val();
+    // get value of time-block
+    var time = $(this).parent().attr("id");
+    // store date in time-block with description
+    localstorage.setItem(text, time);
+
+})
 
 
 
-    function updateTimeSlotItems() {
+
+function updateTimeSlotItems() {
 
         // grab hour integer from HTML ID for moment.js
         $(".time-block").each(function() {
-            var timeBlock = parseInt($(this).attr("data-hour"));
-            console.log(timeBlock);
+        var timeBlock = parseInt($(this).attr("data-hour"));
+        console.log(timeBlock);
 
-            // compare current with timeBlock above
-            //  if time is on current block of time, set as "present"
-            if (currentHour === timeBlock)
-            {   
-                $(this).addClass("present");
-            }
-            //  if time hasn't reached block of time, set as "future"
-            else if (currentHour < timeBlock)
-            {
-                $(this).addClass("future");
-            }
-             // if time has passed the block, set as "past"
-            else 
-            // (currentHour > timeBlock)
-            {
-                $(this).addClass("past");
-            }
+        // compare current with timeBlock above
+        //  if time is on current block of time, set as "present"
+        if (currentHour === timeBlock)
+        {   
+            $(this).addClass("present");
         }
-        );
-    };
+        //  if time hasn't reached block of time, set as "future"
+        else if (currentHour < timeBlock)
+        {
+            $(this).addClass("future");
+        }
+         // if time has passed the block, set as "past"
+        else 
+        // (currentHour > timeBlock)
+        {
+            $(this).addClass("past");
+        }
+    }
+    );
+};
 
 updateTimeSlotItems();
-
-// function updatePlanner() {
-
-// // set up save button
-// var saveBtn = $('.saveBtn')
-// saveBtn.click(handleSave)
-// //    // get value of description
-// // var text = 
-// //    // get value of time-block
-// // var time =
-// //    // store date in time-block with description
-// // localstorage.setItem(time, text);
