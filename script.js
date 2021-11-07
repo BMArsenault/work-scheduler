@@ -14,7 +14,7 @@ $('.saveBtn').on("click", function(){
     var time = $(this).parent().data("hour");
 
     // store time in time-block with description
-    localstorage.setItem(text, time);
+    localStorage.setItem(text, time);
 
 });
 
