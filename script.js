@@ -5,20 +5,18 @@ $("#currentDay").append("Today is " + dateToday);
 // // // get current time in hours
 var currentHour = moment().hour();
 
-// const schedule = localstorage.getItem('schedule')
-
-// localStorage.setItem('schedule')
-
 // set up save button
 $('.saveBtn').on("click", function(){
     // get value of description
     var text = $(this).siblings(".description").val();
+
     // get value of time-block
-    var time = $(this).parent().attr("id");
-    // store date in time-block with description
+    var time = $(this).parent().data("hour");
+
+    // store time in time-block with description
     localstorage.setItem(text, time);
 
-})
+});
 
 
 
