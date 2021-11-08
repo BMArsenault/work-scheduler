@@ -40,4 +40,6 @@ THEN the saved events persist
 
 ## Screenshot
 
+* [Live Github Pages:]()
+* [Repo (here):](https://github.com/BMArsenault/work-scheduler)
 ![Screenshot](https://user-images.githubusercontent.com/89749979/140673337-ed2f220c-a203-4059-b207-5b20f9c7f017.png)
