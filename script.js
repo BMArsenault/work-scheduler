@@ -5,20 +5,25 @@ $("#currentDay").append("Today is " + dateToday);
 // // // get current time in hours
 var currentHour = moment().hour();
 
-// set up save button
-$('.saveBtn').on("click", function(){
-    // get value of description
+// saveBtn click listener
+$(".saveBtn").on("click", function () {
+    // Get nearby values of the description in JQuery
     var text = $(this).siblings(".description").val();
+    var time = $(this).parent().attr("id");
+    // Set the value of the specified local storage item
+    localStorage.setItem(time, text);
+    })
 
-    // get value of time-block
-    var time = $(this).parent().data("hour");
-
-    // store time in time-block with description
-    localStorage.setItem(text, time);
-
-});
-
-
+// Get item from local storage if anything is stored
+$("#hour9 .description").val(localStorage.getItem("hour9"));
+$("#hour10 .description").val(localStorage.getItem("hour10"));
+$("#hour11 .description").val(localStorage.getItem("hour11"));
+$("#hour12 .description").val(localStorage.getItem("hour12"));
+$("#hour13 .description").val(localStorage.getItem("hour13"));
+$("#hour14 .description").val(localStorage.getItem("hour14"));
+$("#hour15 .description").val(localStorage.getItem("hour15"));
+$("#hour16 .description").val(localStorage.getItem("hour16"));
+$("#hour17 .description").val(localStorage.getItem("hour17"));
 
 
 function updateTimeSlotItems() {
@@ -50,3 +55,29 @@ function updateTimeSlotItems() {
 };
 
 updateTimeSlotItems();
+
+// Older attempts at localStorage.getItem
+// set up save button
+// $('.saveBtn').on("click", function(){
+//     // get value of description
+//     var text = $(this).siblings(".description").val();
+
+//     // get value of time-block
+//     var time = $(this).parent().attr("id");
+
+//     // store time in time-block with description
+//     localStorage.setItem(time, text);
+
+// function storeEl(){
+//     $(".hour").each(function(){
+//         let theHour = $(this).text();
+//         let storedTxt = window.localStorage.getItem(theHour);
+
+//         if (storedTxt  !== null){
+//             $(this).siblings('.description').val(storedTxt);
+//             console.log(storedTxt);
+//         }
+//     })
+// };
+
+// storeEl();
